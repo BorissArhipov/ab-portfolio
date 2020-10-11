@@ -11,35 +11,39 @@ interface MenuProps {
 }
 
 class Menu extends Component<MenuProps> {
-
-    public header: React.RefObject<HTMLElement>;
-
-    constructor(props: any) {
-        super(props);
-        this.header = React.createRef();
-    }
-    
+   
     render() {
         return (
-            <header ref={this.header} className="header">
+            <header className="header">
                 <div className="container">
                     <div className="header--wrap">
-                        <LinkOrScroll/>
+                        <LinkOrScroll
+                            classN="header--logo" 
+                            scrollTarget={this.props.refs.home}
+                        />
                         <nav className="header--nav">
                             <LinkOrScroll 
+                                classN="header--link" 
                                 scrollTarget={this.props.refs.home}
                             >
                                 HOME
                             </LinkOrScroll>
                             <LinkOrScroll
+                                classN="header--link" 
                                 scrollTarget={this.props.refs.home}
                             >
                                 ABOUT
                             </LinkOrScroll>
-                            <LinkOrScroll>
+                            <LinkOrScroll
+                                classN="header--link" 
+                                scrollTarget={this.props.refs.home}
+                            >
                                 PORTFOLIO
                             </LinkOrScroll>
-                            <LinkOrScroll>
+                            <LinkOrScroll
+                                classN="header--link" 
+                                scrollTarget={this.props.refs.home}
+                            >
                                 CONTACT
                             </LinkOrScroll>
                         </nav>

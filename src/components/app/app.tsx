@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { Component } from 'react';
-import { connect } from 'react-redux';
 import Menu from '../menu/menu';
+import Home from '../home/home';
 
+import './app.css';
 
 class App extends Component {
     
@@ -16,15 +17,21 @@ class App extends Component {
     render() {
         return (
             <div>
-                <ConnectedMenu
+                <Menu
                     refs={{
                         home: this.home
                     }}
                 />
                 <section className="home" ref={this.home}>
-                    <div className="container">
-                        hello world
-                    </div>
+                    <div className="home--wrapper">
+                        <div className="container">
+                            <Home
+                                refs={{
+                                    home: this.home
+                                }}
+                            />
+                        </div>    
+                    </div>  
                 </section>    
             </div>
             
@@ -32,6 +39,5 @@ class App extends Component {
     }
 }
 
-const ConnectedMenu = connect(null, null, null, { forwardRef: true })(Menu);
 
 export default App;

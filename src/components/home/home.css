@@ -1,0 +1,152 @@
+.home--textwrap {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    padding: 200px 0;
+    margin-left: 200px;
+}
+
+.home--smalltext {
+    margin-bottom: 30px;
+}
+
+.home--title {
+    font-size: 90px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+    font-family: 'Poppins-Bold';
+    width: 400px;
+}
+
+.home--subtitle {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 10px 0 60px 0;
+}
+
+.home--span {
+    font-family: 'Poppins-Bold';
+}
+
+.home--btn {
+    background: none;
+    padding: 12px 90px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 2px solid #afafaf;
+    color: #afafaf;
+    letter-spacing: 1px;
+    transition: all 0.4s;
+}
+
+.home--btn:hover {
+    background-color: #fff;
+    border: 2px solid #fff;
+    color: #000;
+}
+
+.home--scroll {
+    background: none;
+    border: none;
+    position: absolute;
+    bottom: 0;
+}
+
+.home--scroll:focus {
+    outline: none;
+}
+
+.home--scrollwrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home--scrollwrap small {
+    margin-right: 10px;
+    position: relative;
+    color: #afafaf;
+    font-size: 8px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.home--scrollicon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    height: 26px;
+    width: 20px;
+    border: 2px solid #afafaf;
+    border-radius: 1em;
+    padding-top: 7px;
+}
+
+.home--scrollicon-outer {
+    height: 9px;
+    width: 2px;
+    border-radius: .4em;
+    overflow: hidden;
+}
+
+@-webkit-keyframes scroll {
+    from {
+		transform: translateY(0);
+	}
+	25% {
+		transform: translateY(9px);
+    }
+    75% {
+		transform: translateY(-9px);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes scroll {
+    from {
+		transform: translateY(0);
+	}
+	25% {
+		transform: translateY(9px);
+    }
+    75% {
+		transform: translateY(-9px);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+.home--scrollicon-inner {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    background: #afafaf;
+    -webkit-animation: scroll 2.5s ease-in-out infinite;
+    animation: scroll 2.5s ease-in-out infinite;
+}
+
