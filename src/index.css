@@ -25,6 +25,7 @@
 body {
     font: 400 100% / 1.4 'Poppins', sans-serif !important;
     color: #afafaf;
+    background-color: #18181b;
 }
 
 button {
@@ -33,6 +34,10 @@ button {
 
 button:hover {
     cursor: pointer;
+}
+
+button:focus {
+    outline: none;
 }
 
 .container {

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Component } from 'react';
 import Menu from '../menu/menu';
 import Home from '../home/home';
+import About from '../about/about';
 
 import './app.css';
 
@@ -32,9 +33,17 @@ class App extends Component {
                             />
                         </div>    
                     </div>  
+                </section>
+                <section className="about">
+                    <div className="container">
+                        <About
+                            refs={{
+                                home: this.home
+                            }}
+                        />
+                    </div>
                 </section>    
             </div>
-            
         );
     }
 }

@@ -24,6 +24,7 @@ const LinkOrScroll: React.FC<LinkOrScrollProps> = props => {
         <Tag 
             className={props.classN}
             onClick={scrollToTarget}
+            href={props.href}
         >
             {props.children}
         </Tag>

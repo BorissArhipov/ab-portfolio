@@ -13,7 +13,7 @@
     justify-content: center;
     -ms-flex-flow: column;
     flex-flow: column;
-    padding: 200px 0;
+    padding: 230px 0;
     margin-left: 200px;
 }
 
@@ -49,7 +49,7 @@
     border: 2px solid #afafaf;
     color: #afafaf;
     letter-spacing: 1px;
-    transition: all 0.4s;
+    transition: all 0.2s;
 }
 
 .home--btn:hover {
@@ -62,7 +62,7 @@
     background: none;
     border: none;
     position: absolute;
-    bottom: 0;
+    bottom: 50px;
 }
 
 .home--scroll:focus {

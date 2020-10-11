@@ -7,6 +7,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import reducer from './reducer/reducer';
 
 import 'normalize.css';
+import '@fortawesome/fontawesome-free/css/all.css';
 import './index.css';
 import App from './components/app/app';
 

@@ -1,0 +1,125 @@
+.about--upperwrap {
+    display: flex;
+    align-items: center;
+}
+
+.about--imagewrap {
+    display: flex;
+    align-items: center;
+    margin-right: 70px;
+}
+
+.about--img {
+    width: 298px;
+    height: 446px;
+    background-color: #ffffff;
+}
+
+.about--iconwrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.about--icon {
+    color: #afafaf;
+    margin: 30px 0;
+    font-size: 20px;
+    transition: all 0.2s;
+}
+
+.about--icon:hover {
+    color: #ffffff;
+}
+
+.about--smalltext {
+    margin-bottom: 30px;
+}
+
+.about--title {
+    font-size: 48px;
+    margin: 0 0 30px 0;
+    letter-spacing: -2px;
+    width: 500px;
+}
+
+.about--text {
+    line-height: 2;
+    margin: 0;
+}
+
+.about--tipswrap {
+    display: flex;
+    align-items: center;
+    margin: 15px 0 30px 0;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.about--tipswrap2 {
+    display: flex;
+    align-items: center;
+}
+
+.about--tipswrap2 i {
+    color: #5f68bd;
+    margin-right: 5px;
+}
+
+.about--btn {
+    background-color: #5f68bd;
+    padding: 12px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 2px solid #5f68bd;
+    color: #ffffff;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    margin-right: 15px;
+    box-shadow: 16px 16px 0px #202125;
+}
+
+.about--btn:hover {
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    color: #5f68bd;
+}
+
+.about--btn2 {
+    background: none;
+    padding: 12px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 2px solid #5f68bd;
+    color: #ffffff;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    box-shadow: 16px 16px 0px #202125;
+}
+
+.about--btn2:hover {
+    background-color: #5f68bd;
+    color: #ffffff;
+}
+
+.about--btn div {
+    display: flex;
+    align-items: center;
+}
+
+.about--btn i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.about--btn2 div {
+    display: flex;
+    align-items: center;
+}
+
+.about--btn2 i {
+    font-size: 20px;
+    margin-right: 10px;
+}
