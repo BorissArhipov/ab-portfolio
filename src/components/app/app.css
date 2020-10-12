@@ -19,3 +19,14 @@
     padding: 96px 0;
 }
 
+.available {
+    background-image: url('../../img/57690.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.available--shadow {
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8)
+}

@@ -3,6 +3,7 @@ import { Component } from 'react';
 import Menu from '../menu/menu';
 import Home from '../home/home';
 import About from '../about/about';
+import Available from '../available/available';
 
 import './app.css';
 
@@ -41,6 +42,17 @@ class App extends Component {
                                 home: this.home
                             }}
                         />
+                    </div>
+                </section>
+                <section className="available">
+                    <div className="available--shadow">
+                        <div className="container">
+                            <Available
+                                refs={{
+                                    home: this.home
+                                }}
+                            />
+                        </div>    
                     </div>
                 </section>    
             </div>

@@ -123,3 +123,263 @@
     font-size: 20px;
     margin-right: 10px;
 }
+
+.about--lowerwrap {
+    display: flex;
+}
+
+.about--experiencewrap {
+    width: 31.8%;
+}
+
+.about--subtitle {
+    margin-bottom: 60px;
+}
+
+.about--experience {
+    display: flex;
+    flex-flow: nowrap;
+}
+
+.about--organization {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    width: 78px;
+    text-align: right;
+    word-break: break-all;
+}
+
+.about--time {
+    position: relative;
+    width: 2px;
+    margin: 23px 20px 0;
+    background-color: #5f68bd;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.about--time-black {
+    background-color: #202125 !important;
+
+}
+
+.about--time:before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: #5f68bd;
+    position: absolute;
+    top: -15px;
+}
+
+.about--job {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.about--date {
+    font-size: 10px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 10px 0 0 0;
+}
+
+.about--tipslist {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    list-style: none;
+    padding: 0;
+}
+
+.about--tipslist li {
+    margin-bottom: 5px;
+}
+
+.about--tipslist li div {
+    font-size: 14px;
+}
+
+.about--skillswrap {
+    position: relative;
+    width: 68.2%;
+}
+
+.about--bar {
+    margin-bottom: 30px;
+}
+
+.about--label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.about--number {
+    float: right;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.about--progress {
+    margin-top: 5px;
+    border-radius: 0;
+    height: 7px;
+    background-color: #202125;
+}
+
+.about--progress-bar {
+    background-color: #5f68bd;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    transition: width 0.6s ease;
+    height: 100%;
+}
+
+.about--languagewrap {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.about--bar-circle {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.about--progress-left {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    left: 0;
+    display: inline-block;
+}
+
+.about--progress-left .about--progress-barcircle {
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+
+.about--progress-right {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    right: 0;
+    display: inline-block;
+}
+
+.about--progress-right .about--progress-barcircle {
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+}
+
+.about--progress-barcircle {
+    width: 68px;
+    height: 136px;
+    background: 0 0;
+    border-width: 7px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+    border-color: #5f68bd;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-transition: width 0.6s ease;
+    transition: width 0.6s ease;
+}
+
+.about--progress-circle {
+    background: none;
+}
+
+.about--progress-circle:after {
+    content: "";
+    width: 136px;
+    height: 136px;
+    border-radius: 50%;
+    border: 7px solid #202125;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: inherit;
+}
+
+.about--number-circle {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.about--label-circle {
+    text-align: center;
+    width: 100%;
+}
+
+.about--hobbywrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about--hobbyitem {
+    display: flex;
+    align-items: center;
+}
+
+.about--hobbyitem i {
+    color: #5f68bd;
+    font-size: 40px;
+    margin-right: 15px;
+}
+
+.about--itemtitle {
+    font-size: 18px;
+}

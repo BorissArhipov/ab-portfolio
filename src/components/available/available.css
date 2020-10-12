@@ -1,0 +1,37 @@
+.available--wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 130px 0;
+}
+
+.available--small {
+    margin-bottom: 30px;
+}
+
+.available--title {
+    font-size: 48px;
+    margin: 0 0 30px 0;
+    letter-spacing: -2px;
+    font-weight: 600;
+}
+
+.available--btn {
+    background: none;
+    border: 2px solid #5f68bd;
+    font-weight: 600;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    transition: all 0.2s;
+    color:  #afafaf;
+    padding: 12px 90px;
+}
+
+.available--btn:hover {
+    background-color: #5f68bd;
+
+}
