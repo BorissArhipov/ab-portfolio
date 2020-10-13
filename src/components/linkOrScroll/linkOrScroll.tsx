@@ -2,7 +2,7 @@ import * as React from 'react';
 
 interface LinkOrScrollProps {
     classN?: string;
-    scrollTarget?: {current: HTMLElement};
+    scrollTarget?: React.RefObject<HTMLElement>;
     children?: string | React.ReactElement;
     scrollToTarget?: (target: string) => void;
     href?: string
@@ -16,8 +16,6 @@ const LinkOrScroll: React.FC<LinkOrScrollProps> = props => {
         if(!props.scrollTarget) {
             return;
         }
-
-        console.log(props.scrollTarget.current.offsetHeight)
     }
     
     return (

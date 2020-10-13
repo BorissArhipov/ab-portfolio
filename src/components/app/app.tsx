@@ -10,10 +10,16 @@ import './app.css';
 class App extends Component {
     
     public home: React.RefObject<HTMLElement>;
+    public about: React.RefObject<HTMLElement>;
+    public portfolio: React.RefObject<HTMLElement>;
+    public contact: React.RefObject<HTMLElement>;
     
     constructor(props: any) {
         super(props);
         this.home = React.createRef();
+        this.about = React.createRef();
+        this.portfolio = React.createRef();
+        this.contact = React.createRef();
     }
     
     render() {
@@ -21,7 +27,10 @@ class App extends Component {
             <div>
                 <Menu
                     refs={{
-                        home: this.home
+                        home: this.home,
+                        about: this.about,
+                        portfolio: this.portfolio,
+                        contact: this.contact
                     }}
                 />
                 <section className="home" ref={this.home}>
@@ -35,7 +44,7 @@ class App extends Component {
                         </div>    
                     </div>  
                 </section>
-                <section className="about">
+                <section className="about" ref={this.about}>
                     <div className="container">
                         <About
                             refs={{
@@ -54,6 +63,12 @@ class App extends Component {
                             />
                         </div>    
                     </div>
+                </section>
+                <section className="portfolio" ref={this.portfolio}>
+                
+                </section>
+                <section className="contact" ref={this.contact}>
+                
                 </section>    
             </div>
         );

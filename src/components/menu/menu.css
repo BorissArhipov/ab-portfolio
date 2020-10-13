@@ -5,10 +5,16 @@
     right: 0;
     left: 0;
     z-index: 1030;
+    transition: all 0.2s ease;
+    padding: 50px 0;
+}
+
+.header--black {
+    background-color: #18181b;
+    padding: 20px 0;
 }
 
 .header--wrap {
-    padding: 50px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,6 +30,7 @@
 .header--link {
     margin: 0 30px;
     letter-spacing: 1px;
+    padding: 0;
     background: none;
     border: none;
     text-transform: uppercase;
@@ -34,6 +41,12 @@
     transition-timing-function: ease;
     transition-delay: 0s;
     color: #afafaf;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid rgba(175, 175, 175, 0);
+}
+
+.link--active {
+    border-bottom: 3px solid rgba(175, 175, 175, 1);
 }
 
 .header--logo {
