@@ -4,7 +4,8 @@ import LinkOrScroll from '../linkOrScroll/linkOrScroll';
 import { connect } from 'react-redux';
 import handleScroll from '../../actions/handleScroll';
 import { handleRefs } from '../../types/types';
-import { reducerProps } from '../../types/types';
+import { linkReducerProps } from '../../types/types';
+import { coLinkReducerProps } from '../../types/types';
 
 import './menu.css';
 
@@ -19,7 +20,7 @@ interface MenuProps {
         type: 'HANDLE_SCROLL',
         payload: {offset: number, refs: handleRefs}
     }
-    reducer: reducerProps
+    coLinkReducer: linkReducerProps
 }
 
 
@@ -38,11 +39,19 @@ class Menu extends Component<MenuProps> {
     }
     
     componentWillUnmount() {
-        // window.removeEventListener('scroll', this.handleScroll);
+        const {home, about, portfolio, contact} = this.props.refs;
+        window.addEventListener('scroll', () => {
+            this.props.handleScroll(window.pageYOffset, {
+                home: home.current.offsetTop,
+                about: about.current.offsetTop,
+                portfolio: portfolio.current.offsetTop,
+                contact: contact.current.offsetTop
+            })
+        });
     }
 
     render() {
-        const {header, home, about, portfolio, contact} = this.props.reducer;
+        const {header, home, about, portfolio, contact} = this.props.coLinkReducer;
         return (
             <header className={header}>
                 <div className="container">
@@ -84,9 +93,9 @@ class Menu extends Component<MenuProps> {
     }
 };
 
-function mapStateToProps( reducer: reducerProps) {
+function mapStateToProps( {coLinkReducer}: coLinkReducerProps) {
     return {
-        reducer
+        coLinkReducer
     }
 }
 

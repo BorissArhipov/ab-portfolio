@@ -29,6 +29,7 @@
     transition: all 0.2s;
     color:  #afafaf;
     padding: 12px 90px;
+    font-size: 12px;
 }
 
 .available--btn:hover {

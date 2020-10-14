@@ -4,6 +4,7 @@ import Menu from '../menu/menu';
 import Home from '../home/home';
 import About from '../about/about';
 import Available from '../available/available';
+import Portfolio from '../portfolio/portfolio';
 
 import './app.css';
 
@@ -65,7 +66,9 @@ class App extends Component {
                     </div>
                 </section>
                 <section className="portfolio" ref={this.portfolio}>
-                
+                    <div className="container">
+                        <Portfolio/>
+                    </div>
                 </section>
                 <section className="contact" ref={this.contact}>
                 

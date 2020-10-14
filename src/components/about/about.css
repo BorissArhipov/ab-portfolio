@@ -12,7 +12,10 @@
 .about--img {
     width: 298px;
     height: 446px;
-    background-color: #ffffff;
+    background-image: url('../../img/sbg.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .about--iconwrap {
