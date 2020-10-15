@@ -22,38 +22,65 @@ class Portfolio extends Component<portfolioProps> {
         const items: itemsTypes["items"] = [
             {
                 key: 1,
+                title: 'Tetris',
                 collection: 'pet',
                 img: '',
-                text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto molestias eius ea aut qui soluta nam quidem tempore, voluptatem quo. Delectus ipsam nulla quis nisi officia laborum ab dolorum labore',
-                href: '#'
+                text: `
+                    Typescript implementation of the famous game.
+                `,
+                respon: [
+                    'Building up a Typescript project', 
+                    'Implementing the OOP',
+                    'Implementing the collision check pathern',
+                    'Using the HTML Canvas'
+                ],
+                tehn: ['HTML', 'CSS', 'Typescript', 'Git', 'Webpack'],
+                demo: 'https://tetris.borissarhipov.me/',
+                git: 'https://github.com/BorissArhipov/tetris-ts'
             },
             {
                 key: 2,
+                title: 'title',
                 collection: 'pet',
                 img: '',
                 text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto molestias eius ea aut qui soluta nam quidem tempore, voluptatem quo. Delectus ipsam nulla quis nisi officia laborum ab dolorum labore',
-                href: '#'
+                respon: ['', ''],
+                tehn: ['heh', 'meh'],
+                demo: '#',
+                git: '#'
             },
             {
                 key: 3,
+                title: 'title',
                 collection: 'free',
                 img: '',
                 text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto molestias eius ea aut qui soluta nam quidem tempore, voluptatem quo. Delectus ipsam nulla quis nisi officia laborum ab dolorum labore',
-                href: '#'
+                respon: ['', ''],
+                tehn: ['heh', 'meh'],
+                demo: '#',
+                git: '#'
             },
             {
                 key: 4,
+                title: 'title',
                 collection: 'pet',
                 img: '',
                 text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto molestias eius ea aut qui soluta nam quidem tempore, voluptatem quo. Delectus ipsam nulla quis nisi officia laborum ab dolorum labore',
-                href: '#'
+                respon: ['', ''],
+                tehn: ['heh', 'meh'],
+                demo: null,
+                git: '#'
             },
             {
                 key: 5,
+                title: 'title',
                 collection: 'free',
                 img: '',
                 text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto molestias eius ea aut qui soluta nam quidem tempore, voluptatem quo. Delectus ipsam nulla quis nisi officia laborum ab dolorum labore',
-                href: '#'
+                respon: ['', ''],
+                tehn: ['heh', 'meh'],
+                demo: '#',
+                git: '#'
             },
         ];
         const {col, all, pet, free} = this.props.coPortfolioReducer;
@@ -88,14 +115,95 @@ class Portfolio extends Component<portfolioProps> {
                 <ul className="portfolio--projects">
                     {
                         items.map(item => {
+                            let demoOrWebpage: React.ReactElement | null = null;
+                            let toRepo: React.ReactElement | null = null;
+                            let respon: React.ReactElement[] | null = null;
+                            let tehn: React.ReactElement[] | null = null;
+                            if(item.collection === 'pet' && item.demo != null) {
+                                demoOrWebpage = (
+                                    <LinkOrScroll
+                                        href={item.demo}
+                                        classN="portfolio--link"
+                                    >
+                                        To demo
+                                    </LinkOrScroll> 
+                                );
+                                toRepo = (<LinkOrScroll
+                                            href={item.git}
+                                            classN="portfolio--link-blue"
+                                        >
+                                            To repository
+                                        </LinkOrScroll>)
+                            } else if(item.collection === 'pet' && item.demo === null) {
+                                toRepo = (<LinkOrScroll
+                                    href={item.git}
+                                    classN="portfolio--link-blue"
+                                >
+                                    To repository
+                                </LinkOrScroll>)
+                            } else {
+                                demoOrWebpage = (
+                                    <LinkOrScroll
+                                        href={item.demo}
+                                        classN="portfolio--link"
+                                    >
+                                        To webpage
+                                    </LinkOrScroll> 
+                                );
+                            }
+
+                            respon = item.respon.map(resp => {
+                                return (
+                                    <li key={item.key + resp}>
+                                        {resp}
+                                    </li>
+                                )
+                            })
+
+                            tehn = item.tehn.map(teh => {
+                                return (
+                                    <div key={item.key + teh} className="portfolio--tipswrap">
+                                        <i className="fas fa-check"></i>
+                                        <div className="about--tip">
+                                            {teh}
+                                        </div>
+                                    </div> 
+                                )
+                            })
+
                             if(col === 'all' || item.collection === col) {
                                 return (
-                                    <li
+                                    <li className="portfolio--con"
                                         key={item.key}
                                     >
-                                        <h3>
-                                            {item.key}
-                                        </h3>
+                                        <div 
+                                            className="portfolio--img" 
+                                            style={{backgroundImage: `url(${item.img})`}}
+                                        ></div>
+                                        <div className="portfolio--con2">
+                                            <h3 className="portfolio--subtitle subtitle">
+                                                {item.title}
+                                            </h3>
+                                            <p className="portfolio--text">
+                                                {item.text}
+                                            </p> 
+                                            <p className="portfolio--text">
+                                                Responsibilities:
+                                            </p>
+                                            <ul className="portfolio--list">
+                                                {respon}
+                                            </ul>
+                                            <p className="portfolio--text">
+                                                Technologies:
+                                            </p>
+                                            <div className="portfolio--iconcon">
+                                                {tehn}
+                                            </div>
+                                            <div className="portfolio--btncon">
+                                                {demoOrWebpage}
+                                                {toRepo}
+                                            </div> 
+                                        </div>
                                     </li>
                                 )
                             }

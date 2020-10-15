@@ -26,10 +26,14 @@ export interface linkReducerProps {
 export interface itemsTypes {
     items: {
         key: number,
+        title: string,
         collection: string,
         img: string,
         text: string,
-        href: string
+        respon: string[],
+        tehn: string[],
+        demo: string | null,
+        git: string | null
     }[]
 }
 
