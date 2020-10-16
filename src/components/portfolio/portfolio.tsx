@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { Component } from 'react';
 import LinkOrScroll from '../linkOrScroll/linkOrScroll';
-import { itemsTypes } from '../../types/types';
 import handleColChange from '../../actions/handleColChange';
 import { connect } from 'react-redux';
 import {coPortfolioReducerProps} from '../../types/types';
 import {portfolioReducerProps} from '../../types/types';
+import itemsFunc from './portfolioItems';
+
 
 import './portfolio.css';
 
@@ -19,70 +20,7 @@ interface portfolioProps {
 
 class Portfolio extends Component<portfolioProps> {
     render() {
-        const items: itemsTypes["items"] = [
-            {
-                key: 1,
-                title: 'Tetris',
-                collection: 'pet',
-                img: '',
-                text: `
-                    Typescript implementation of the famous game.
-                `,
-                respon: [
-                    'Building up a Typescript project', 
-                    'Implementing the OOP',
-                    'Implementing the collision check pathern',
-                    'Using the HTML Canvas'
-                ],
-                tehn: ['HTML', 'CSS', 'Typescript', 'Git', 'Webpack'],
-                demo: 'https://tetris.borissarhipov.me/',
-                git: 'https://github.com/BorissArhipov/tetris-ts'
-            },
-            {
-                key: 2,
-                title: 'title',
-                collection: 'pet',
-                img: '',
-                text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto molestias eius ea aut qui soluta nam quidem tempore, voluptatem quo. Delectus ipsam nulla quis nisi officia laborum ab dolorum labore',
-                respon: ['', ''],
-                tehn: ['heh', 'meh'],
-                demo: '#',
-                git: '#'
-            },
-            {
-                key: 3,
-                title: 'title',
-                collection: 'free',
-                img: '',
-                text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto molestias eius ea aut qui soluta nam quidem tempore, voluptatem quo. Delectus ipsam nulla quis nisi officia laborum ab dolorum labore',
-                respon: ['', ''],
-                tehn: ['heh', 'meh'],
-                demo: '#',
-                git: '#'
-            },
-            {
-                key: 4,
-                title: 'title',
-                collection: 'pet',
-                img: '',
-                text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto molestias eius ea aut qui soluta nam quidem tempore, voluptatem quo. Delectus ipsam nulla quis nisi officia laborum ab dolorum labore',
-                respon: ['', ''],
-                tehn: ['heh', 'meh'],
-                demo: null,
-                git: '#'
-            },
-            {
-                key: 5,
-                title: 'title',
-                collection: 'free',
-                img: '',
-                text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto molestias eius ea aut qui soluta nam quidem tempore, voluptatem quo. Delectus ipsam nulla quis nisi officia laborum ab dolorum labore',
-                respon: ['', ''],
-                tehn: ['heh', 'meh'],
-                demo: '#',
-                git: '#'
-            },
-        ];
+        const items = itemsFunc();
         const {col, all, pet, free} = this.props.coPortfolioReducer;
         return (
             <div className="portfolio--wrap">
@@ -178,7 +116,7 @@ class Portfolio extends Component<portfolioProps> {
                                     >
                                         <div 
                                             className="portfolio--img" 
-                                            style={{backgroundImage: `url(${item.img})`}}
+                                            style={{backgroundImage: `url(${item.img}`}}
                                         ></div>
                                         <div className="portfolio--con2">
                                             <h3 className="portfolio--subtitle subtitle">
