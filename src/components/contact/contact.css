@@ -74,7 +74,7 @@
 
 .contact--textarea {
     width: 100%;
-    height: 198px;
+    height: 168px;
     padding: 9px 0;
     background: none;
     border: none;
@@ -141,4 +141,36 @@
     background-color: #ffffff;
     border: 2px solid #ffffff;
     color: #5f68bd;
+}
+
+@media screen and (max-width: 950px) {
+    .contact--form {
+        background-color: #202125;
+        max-width: none;
+        width: 100%;
+    }
+
+    .contact--inputcon {
+        display: flex;
+        margin-bottom: 15px;
+        margin-top: 75px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact--input {
+        width: 100%;
+    }
+
+    .contact--inputcon2:nth-child(1) {
+        margin: 0 0 20px 0;
+    }
+
+    .contact--inputcon2 {
+        margin-bottom: 20px;
+    }
+
+    .contact--title {
+        font-size: 28px;
+    }
 }

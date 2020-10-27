@@ -41,7 +41,8 @@ class App extends Component {
                         <div className="container">
                             <Home
                                 refs={{
-                                    home: this.home
+                                    contact: this.contact,
+                                    about: this.about
                                 }}
                             />
                         </div>    
@@ -51,7 +52,7 @@ class App extends Component {
                     <div className="container">
                         <About
                             refs={{
-                                home: this.home
+                                contact: this.contact
                             }}
                         />
                     </div>
@@ -61,7 +62,7 @@ class App extends Component {
                         <div className="container">
                             <Available
                                 refs={{
-                                    home: this.home
+                                    contact: this.contact
                                 }}
                             />
                         </div>    

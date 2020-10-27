@@ -36,3 +36,9 @@
     background-color: #5f68bd;
 
 }
+
+@media screen and (max-width: 950px) {
+    .available--title {
+        font-size: 28px;
+    }
+}

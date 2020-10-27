@@ -40,7 +40,7 @@ class Menu extends Component<MenuProps> {
     
     componentWillUnmount() {
         const {home, about, portfolio, contact} = this.props.refs;
-        window.addEventListener('scroll', () => {
+        window.removeEventListener('scroll', () => {
             this.props.handleScroll(window.pageYOffset, {
                 home: home.current.offsetTop,
                 about: about.current.offsetTop,
@@ -69,19 +69,19 @@ class Menu extends Component<MenuProps> {
                             </LinkOrScroll>
                             <LinkOrScroll
                                 classN={about} 
-                                scrollTarget={this.props.refs.home}
+                                scrollTarget={this.props.refs.about}
                             >
                                 ABOUT
                             </LinkOrScroll>
                             <LinkOrScroll
                                 classN={portfolio} 
-                                scrollTarget={this.props.refs.home}
+                                scrollTarget={this.props.refs.portfolio}
                             >
                                 PORTFOLIO
                             </LinkOrScroll>
                             <LinkOrScroll
                                 classN={contact}
-                                scrollTarget={this.props.refs.home}
+                                scrollTarget={this.props.refs.contact}
                             >
                                 CONTACT
                             </LinkOrScroll>

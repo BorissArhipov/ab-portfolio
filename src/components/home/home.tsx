@@ -6,7 +6,8 @@ import './home.css';
 
 interface HomeProps {
     refs: {
-        home: {current: HTMLElement}
+        about: {current: HTMLElement},
+        contact: {current: HTMLElement}
     }
 }
 
@@ -27,11 +28,13 @@ class Home extends Component<HomeProps> {
                     </h2>
                     <LinkOrScroll
                         classN="home--btn"
+                        scrollTarget={this.props.refs.contact}
                     >
                         HIRE ME
                     </LinkOrScroll>  
                     <LinkOrScroll
-                    classN="home--scroll"
+                        classN="home--scroll"
+                        scrollTarget={this.props.refs.about}
                     >
                         <div className="home--scrollwrap">
                             <small>

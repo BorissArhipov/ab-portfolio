@@ -150,3 +150,27 @@
     animation: scroll 2.5s ease-in-out infinite;
 }
 
+@media screen and (max-width: 950px) {
+    .home--textwrap {
+        margin-left: 0;
+        align-items: center;
+    }   
+    
+    .home--title {
+        font-size: 32px;
+        font-weight: 700;
+        text-align: center;
+        width: 100%;
+    }
+
+    .home--subtitle {
+        font-size: 18px;
+    }
+
+    .home--scroll {
+        display: none;
+    }
+}
+
+
+

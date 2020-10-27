@@ -129,6 +129,7 @@
 .portfolio--iconcon {
     display: flex;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .portfolio--tipswrap {
@@ -148,4 +149,41 @@
 
 .portfolio--subtitle {
     margin: 0 0 20px 0;
+}
+
+@media screen and (max-width: 1350px) {
+    .portfolio--img {
+        width: 380px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .portfolio--img {
+        width: 340px;
+        height: 400px;
+        background-position: left center;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .portfolio--con {
+        justify-content: space-between;
+        flex-direction: column;
+    }    
+
+    .portfolio--title {
+        font-size: 28px;
+    }
+
+    .portfolio--img {
+        width: 400px;
+        height: 400px;
+        background-position: center center;
+        margin: 0 0 30px 0;
+    }
+
+    .portfolio--con2 {
+        width: 100%;
+    }
 }

@@ -6,7 +6,7 @@ import './about.css';
 
 interface AboutProps {
     refs: {
-        home: {current: HTMLElement}
+        contact: {current: HTMLElement}
     }
 }
 
@@ -71,7 +71,10 @@ class About extends Component<AboutProps> {
                                 </span>
                             </div>
                         </LinkOrScroll>
-                        <LinkOrScroll classN="about--btn2">
+                        <LinkOrScroll 
+                            classN="about--btn2"
+                            scrollTarget={this.props.refs.contact}
+                        >
                             <div>
                                 <i className="fas fa-coffee"></i>
                                 <span>

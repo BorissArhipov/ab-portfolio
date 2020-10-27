@@ -6,7 +6,7 @@ import './available.css';
 
 interface AvailableProps {
     refs: {
-        home: {current: HTMLElement}
+        contact: {current: HTMLElement}
     }
 }
 
@@ -21,7 +21,10 @@ class Available extends Component<AvailableProps> {
                 <h3 className="available--title">
                     Let's start a project together!
                 </h3>
-                <LinkOrScroll classN="available--btn">
+                <LinkOrScroll 
+                    classN="available--btn"
+                    scrollTarget={this.props.refs.contact}
+                >
                     CONTACT ME
                 </LinkOrScroll>
             </div>

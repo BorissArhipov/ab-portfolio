@@ -81,3 +81,34 @@ button:focus {
     bottom: -15px;
     left: 0;
 }
+
+@media screen and (max-width: 1350px) {
+    .container {
+        max-width: 1120px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .container {
+        max-width: 920px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .contact {
+        background-image: none !important;
+        padding: 0 !important;
+    }
+
+    .small-text::before {
+        display: none;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
+}

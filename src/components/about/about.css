@@ -386,3 +386,76 @@
 .about--itemtitle {
     font-size: 18px;
 }
+
+@media screen and (max-width: 1350px) {
+    .about--experiencewrap {
+        width: 37.6%;
+    }
+
+    .about--skillswrap {
+        width: 62.4%;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .about--languagewrap {
+        width: 100%;
+    }
+
+    .about--experiencewrap {
+        width: 45.8%;
+    }
+
+    .about--skillswrap {
+        width: 54.2%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .about--upperwrap {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 50px;
+    }
+
+    .about--lowerwrap {
+        flex-direction: column;
+    }
+
+    .about--experiencewrap {
+        width: 100%;
+    }
+
+    .about--skillswrap {
+        width: 100%;
+    }
+
+    .about--imagewrap {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .about--img {
+        width: 500px;
+        height: 700px;
+    }
+
+    .about--iconwrap {
+        flex-direction: row;
+        margin-left: 0;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .about--icon {
+        margin: 0 30px;
+    }
+
+    .about--title {
+        font-size: 28px;
+    }
+}
