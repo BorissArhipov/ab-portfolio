@@ -354,18 +354,7 @@ class About extends Component<AboutProps> {
                         </div>
                         <div className="about--bar">
                             <span className="about--label">
-                                Testing
-                            </span>
-                            <span className="about--number">
-                                90%
-                            </span>
-                            <div className="about--progress">
-                                <div style={{width: '90%'}} className="about--progress-bar"></div>
-                            </div>
-                        </div>
-                        <div className="about--bar">
-                            <span className="about--label">
-                                Python, PHP, MySQL
+                                Jest, Enzyme
                             </span>
                             <span className="about--number">
                                 70%
@@ -376,13 +365,24 @@ class About extends Component<AboutProps> {
                         </div>
                         <div className="about--bar">
                             <span className="about--label">
-                                Worldpress, Headless Wordpress
+                                Python, PHP, MySQL, MongoDB
                             </span>
                             <span className="about--number">
-                                85%
+                                70%
                             </span>
                             <div className="about--progress">
-                                <div style={{width: '85%'}} className="about--progress-bar"></div>
+                                <div style={{width: '70%'}} className="about--progress-bar"></div>
+                            </div>
+                        </div>
+                        <div className="about--bar">
+                            <span className="about--label">
+                                Worldpress, Headless Wordpress, Apollo, GraphQL
+                            </span>
+                            <span className="about--number">
+                                75%
+                            </span>
+                            <div className="about--progress">
+                                <div style={{width: '75%'}} className="about--progress-bar"></div>
                             </div>
                         </div>
                         <div className="about--bar">
