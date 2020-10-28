@@ -5,7 +5,7 @@ import portfolioReducer from './portfolioReducer';
 
 const reducer = combineReducers({
     coLinkReducer: linkReducer,
-    coPortfolioReducer: portfolioReducer
+    coPortfolioReducer: portfolioReducer,
 });
   
 export default reducer;

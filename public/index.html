@@ -9,8 +9,16 @@
       content="Web site created using create-react-app"
     />
     <title>Boriss Arhipov portfolio</title>
+    <style>
+      .spinner{position:fixed;height:100vh;width:100vw;top:0;left:0;background-color:#18181b;z-index:1050;display:flex;justify-content:center;align-items:center;flex-direction:column}.spinner--ring{display:flex;width:100px;height:100px}.spinner--text{margin-top:30px}@-webkit-keyframes lds-dual-ring{from{transform:rotate(90deg)}25%{transform:rotate(180deg)}75%{transform:rotate(270deg)}to{transform:rotate(360deg)}}@keyframes lds-dual-ring{from{transform:rotate(0)}25%{transform:rotate(120deg)}75%{transform:rotate(250deg)}to{transform:rotate(360deg)}}.spinner--ring::after{content:" ";display:block;width:100px;height:100px;border-radius:50%;border:3px solid #000;-webkit-animation:lds-dual-ring 1.2s linear infinite;animation:lds-dual-ring 1.2s linear infinite;border-color:#afafaf transparent #5f68bd transparent}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="spinner">
+      <div class="spinner--ring"></div>
+      <p class="spinner--text">Loading...</p>
+    </div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>

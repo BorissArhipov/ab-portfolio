@@ -27,7 +27,7 @@ class App extends Component {
     
     render() {
         return (
-            <div>
+            <div style={{position: "relative"}}>
                 <Menu
                     refs={{
                         home: this.home,
@@ -83,6 +83,5 @@ class App extends Component {
         );
     }
 }
-
 
 export default App;

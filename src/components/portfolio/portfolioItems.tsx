@@ -44,7 +44,7 @@ const itemsFunc = () => {
                 'Implementing the component approach',
                 'Using the Redux store'
             ],
-            tehn: ['HTML', 'CSS', 'Typescript', 'React', 'Redux', 'Git', 'Webpack'],
+            tehn: ['HTML', 'CSS', 'Typescript', 'React', 'Redux', 'PHP', 'Git', 'Webpack'],
             demo: null,
             git: 'https://github.com/BorissArhipov/ab-portfolio'
         },
