@@ -3,6 +3,7 @@ import { Component } from 'react';
 import LinkOrScroll from '../linkOrScroll/linkOrScroll';
 import { connect } from 'react-redux';
 import handleScroll from '../../actions/handleScroll';
+import toggleBurger from '../../actions/toggleBurger';
 import { handleRefs } from '../../types/types';
 import { linkReducerProps } from '../../types/types';
 import { coLinkReducerProps } from '../../types/types';
@@ -21,6 +22,9 @@ interface MenuProps {
         payload: {offset: number, refs: handleRefs}
     }
     coLinkReducer: linkReducerProps
+    toggleBurger?: () => {
+        type: 'TOGGLE_BURGER'
+    }
 }
 
 
@@ -50,16 +54,51 @@ class Menu extends Component<MenuProps> {
         });
     }
 
+
     render() {
-        const {header, home, about, portfolio, contact} = this.props.coLinkReducer;
+        const {header, home, about, portfolio, contact, burger} = this.props.coLinkReducer;
         return (
             <header className={header}>
+                <nav className={burger}>
+                    <LinkOrScroll 
+                        classN={home} 
+                        scrollTarget={this.props.refs.home}
+                    >
+                        HOME
+                    </LinkOrScroll>
+                    <LinkOrScroll
+                        classN={about} 
+                        scrollTarget={this.props.refs.about}
+                    >
+                        ABOUT
+                    </LinkOrScroll>
+                    <LinkOrScroll
+                        classN={portfolio} 
+                        scrollTarget={this.props.refs.portfolio}
+                    >
+                        PORTFOLIO
+                    </LinkOrScroll>
+                    <LinkOrScroll
+                        classN={contact}
+                        scrollTarget={this.props.refs.contact}
+                    >
+                        CONTACT
+                    </LinkOrScroll>
+                </nav>
                 <div className="container">
                     <div className="header--wrap">
                         <LinkOrScroll
                             classN="header--logo" 
                             scrollTarget={this.props.refs.home}
                         />
+                        <button 
+                            className="header--burger"
+                            onClick={() => this.props.toggleBurger()}
+                        >
+                            <div className="header--stick"></div>
+                            <div className="header--stick"></div>
+                            <div className="header--stick"></div>
+                        </button>
                         <nav className="header--nav">
                             <LinkOrScroll 
                                 classN={home} 
@@ -99,4 +138,4 @@ function mapStateToProps( {coLinkReducer}: coLinkReducerProps) {
     }
 }
 
-export default connect(mapStateToProps, { handleScroll })(Menu);
+export default connect(mapStateToProps, { handleScroll, toggleBurger })(Menu);

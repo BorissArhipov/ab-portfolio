@@ -12,6 +12,7 @@ export interface coLinkReducerProps {
         about: string
         portfolio: string
         contact: string
+        burger: string
     }
 }
 
@@ -21,6 +22,7 @@ export interface linkReducerProps {
     about: string
     portfolio: string
     contact: string
+    burger: string
 }
 
 export interface itemsTypes {

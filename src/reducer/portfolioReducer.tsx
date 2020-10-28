@@ -40,6 +40,9 @@ const portfolioReducer = (state = initialState, action: {type: string, payload?:
                     free: 'portfolio--btn portfolio--btn-active'
                 }
             }
+            return {
+                ...state
+            }
         default:
             return {
                 ...state

@@ -3,7 +3,8 @@ const initialState = {
     home: 'header--link active',
     about: 'header--link',
     portfolio: 'header--link',
-    contact: 'header--link'
+    contact: 'header--link',
+    burger: 'header--mob'
 }
 
 const linkReducer = (state = initialState, action: {type: string, payload?: any}) => {
@@ -33,7 +34,7 @@ const linkReducer = (state = initialState, action: {type: string, payload?: any}
                     action.payload.offset > 10 &&
                     action.payload.refs.about < action.payload.offset &&
                     action.payload.refs.portfolio > action.payload.offset
-                ) {
+            ) {
                 return {
                     ...state,
                     header: 'header header--black',
@@ -58,7 +59,8 @@ const linkReducer = (state = initialState, action: {type: string, payload?: any}
                 }
             }
             if (
-                action.payload.offset > action.payload.refs.contact) {
+                action.payload.offset > action.payload.refs.contact
+            ) {
                 return {
                     ...state,
                     header: 'header header--black',
@@ -68,6 +70,36 @@ const linkReducer = (state = initialState, action: {type: string, payload?: any}
                     contact: 'header--link link--active'
                 }
             }
+            return {
+                ...state
+            }   
+        case 'TOGGLE_BURGER':
+            if(state.burger === 'header--mob') {
+                return {
+                    ...state,
+                    burger: 'header--mob burger--active'
+                }
+            }
+
+            if(state.burger === 'header--mob burger--active') {
+                return {
+                    ...state,
+                    burger: 'header--mob'
+                }
+            }
+
+            return {
+                ...state
+            }
+        
+        case 'CLOSE_BURGER':
+            
+            return {
+                ...state,
+                burger: 'header--mob'
+            }
+    
+
         default:
             return {
                 ...state

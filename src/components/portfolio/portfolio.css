@@ -187,3 +187,28 @@
         width: 100%;
     }
 }
+
+@media screen and (max-width: 550px) {
+    .portfolio--img {
+        width: 310px;
+        height: 310px;
+    }
+
+    .portfolio--btncon {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio--link {
+        box-sizing: border-box;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .portfolio--link-blue {
+        box-sizing: border-box;
+        width: 100%;
+        margin-right: 0;
+    }
+}

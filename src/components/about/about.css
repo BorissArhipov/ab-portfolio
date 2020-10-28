@@ -459,3 +459,63 @@
         font-size: 28px;
     }
 }
+
+@media screen and (max-width: 750px) {
+    .about--img {
+        width: 310px;
+        height: 500px;
+    }
+
+    .about--title {
+        width: 100%;
+    }
+
+    .about--hobbywrap {
+        flex-wrap: wrap;
+    }
+
+    .about--hobbyitem {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 550px) {  
+    .about--tipswrap {
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .about--tipswrap2 {
+        margin-right: 10px;
+    }
+
+    .about--btn {
+        width: 100%;
+        padding: 12px 20px;
+        margin-right: 0;
+        box-shadow: none;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .about--btn2 {
+        width: 100%;
+        padding: 12px 20px;
+        margin-right: 0;
+        box-shadow: none;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .about--languagewrap {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about--bar-circle {
+        margin-bottom: 50px;
+    }
+}

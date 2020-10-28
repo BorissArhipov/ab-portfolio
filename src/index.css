@@ -28,6 +28,14 @@ body {
     background-color: #18181b;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 button {
     font: 400 100% / 1.4 'Poppins', serif;
 }
@@ -110,5 +118,18 @@ button:focus {
 
     .subtitle {
         font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .container {
+        max-width: 520px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .container {
+        max-width: 310px;
+        padding: 0 5px;
     }
 }

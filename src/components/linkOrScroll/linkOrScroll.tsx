@@ -1,10 +1,15 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
+import closeBurger from '../../actions/closeBurger';
 
 interface LinkOrScrollProps {
     classN?: string;
     scrollTarget?: React.RefObject<HTMLElement>;
     children?: string | React.ReactElement;
-    href?: string
+    href?: string;
+    closeBurger?: () => {
+        type: 'CLOSE_BURGER'
+    }
 }
 
 const LinkOrScroll: React.FC<LinkOrScrollProps> = props => {
@@ -15,12 +20,15 @@ const LinkOrScroll: React.FC<LinkOrScrollProps> = props => {
         if(!props.scrollTarget) {
             return;
         }
+        
+        props.closeBurger();
 
         props.scrollTarget.current.scrollIntoView({ 
             behavior: 'smooth' 
         });
 
     }
+
     return (
         <Tag 
             className={props.classN}
@@ -32,4 +40,4 @@ const LinkOrScroll: React.FC<LinkOrScrollProps> = props => {
     );
 };
 
-export default LinkOrScroll;
+export default connect(null, { closeBurger })(LinkOrScroll);
