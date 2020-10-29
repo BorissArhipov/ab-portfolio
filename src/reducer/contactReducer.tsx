@@ -47,6 +47,14 @@ const contactReducer = (state = initialState, action: {type: string, payload?: a
                     color: '#2e811e'
                 };  
             }
+
+            if(action.payload === 'downloaded') {
+                return {
+                    ...state,
+                    message: 'CV has successfully downloaded',
+                    color: '#2e811e'
+                };  
+            }
         
             return {
                 ...state

@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { Component } from 'react';
 import LinkOrScroll from '../linkOrScroll/linkOrScroll';
+import { connect } from 'react-redux';
+import handleResponse from '../../actions/handleResponse';
+import clearMessage from '../../actions/clearMessage';
 
 import './about.css';
 
@@ -8,24 +11,36 @@ interface AboutProps {
     refs: {
         contact: {current: HTMLElement}
     }
+    handleResponse: (aswer: string) => {
+        type: 'HANDLE_RESPONSE',
+        payload: string
+    }
+    clearMessage: () => {
+        type: 'CLEAR_MESSAGE'
+    }
 }
 
 class About extends Component<AboutProps> {
 
     handleDownload() {
-        fetch("https://borissarhipov.me/cv", {
-            method: 'GET'
-        })
-        .then(response => response.blob())
-        .then(blob => {
-            let url = window.URL.createObjectURL(blob);
-            let a = document.createElement('a');
-            a.href = url;
-            a.download = "CV.pdf";
-            document.body.appendChild(a);
-            a.click();    
-            a.remove();   
-        });
+        fetch('https://borissarhipov.me/cv/CV.pdf')
+            .then(resp => resp.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'CV.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                this.props.handleResponse('downloaded');
+                setTimeout(this.props.clearMessage, 4000);
+            })
+            .catch(() => {
+                this.props.handleResponse('error');
+                setTimeout(this.props.clearMessage, 4000);
+            })
     }
     
     render() {
@@ -454,4 +469,4 @@ class About extends Component<AboutProps> {
     }
 };
 
-export default About;
+export default connect(null, { handleResponse, clearMessage })(About);
