@@ -25,6 +25,18 @@ export interface linkReducerProps {
     burger: string
 }
 
+export interface coContactReducerProps {
+    coContactReducer: {
+        message: null | string
+        color: null | string
+    }
+}
+
+export interface contactReducerProps {
+    message: null | string
+    color: null | string
+}
+
 export interface itemsTypes {
     items: {
         key: number,

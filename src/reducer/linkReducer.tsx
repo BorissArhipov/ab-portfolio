@@ -1,4 +1,6 @@
-const initialState = {
+import { linkReducerProps } from '../types/types';
+
+const initialState: linkReducerProps = {
     header: 'header',
     home: 'header--link active',
     about: 'header--link',

@@ -1,26 +1,63 @@
 import * as React from 'react';
 import { Component } from 'react';
+import { connect } from 'react-redux';
+import handleResponse from '../../actions/handleResponse';
+import clearMessage from '../../actions/clearMessage';
 
 import './contact.css';
 
-class Contact extends Component {
+interface ContactProps {
+    handleResponse: (aswer: string) => {
+        type: 'HANDLE_RESPONSE',
+        payload: string
+    }
+    clearMessage: () => {
+        type: 'CLEAR_MESSAGE'
+    }
+}
 
+class Contact extends Component<ContactProps> {
+    
     handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
-        const name = ((e.target as HTMLElement).querySelector("#name") as HTMLInputElement).value;
-        const mail = ((e.target as HTMLElement).querySelector("#mail") as HTMLInputElement).value;
-        const text = ((e.target as HTMLElement).querySelector("#text") as HTMLInputElement).value;
+        const name = ((e.target as HTMLElement).querySelector("#name") as HTMLInputElement);
+        const mail = ((e.target as HTMLElement).querySelector("#mail") as HTMLInputElement);
+        const text = ((e.target as HTMLElement).querySelector("#text") as HTMLInputElement);
+        
+        if(!name.value || !mail.value || !text.value) {
+            this.props.handleResponse('empty-fields');
+            setTimeout(this.props.clearMessage, 4000);
+            return;
+        }
+
+        if(name.value.length > 30 || mail.value.length > 30  || text.value.length > 400 ) {
+            this.props.handleResponse('too-long');
+            setTimeout(this.props.clearMessage, 4000);
+            return;
+        }
         
         let xhr = new XMLHttpRequest();
 
-        xhr.addEventListener('load', () => {
-            console.log(xhr.responseText)
-        });
-
-        xhr.open('GET', 'https://borissarhipov.me/server/index.php?mail=' + mail + '&name=' + name + '&text=' + text);
+        xhr.open('GET', 'https://borissarhipov.me/server/index.php?mail=' + escape(mail.value) + '&name=' + escape(name.value) + '&text=' + escape(text.value));
 
         xhr.send();
+
+        xhr.onerror = () => {
+            this.props.handleResponse('error');
+            setTimeout(this.props.clearMessage, 4000);
+            return;
+        };
+
+        xhr.onload = () => {
+            this.props.handleResponse(xhr.responseText);
+            setTimeout(this.props.clearMessage, 4000);
+            if(xhr.responseText === 'message-sent') {
+                name.value = '';
+                mail.value = '';
+                text.value = '';
+            }
+        };
     }
     
     render() {
@@ -66,4 +103,4 @@ class Contact extends Component {
     }
 };
 
-export default Contact;
+export default connect(null, { handleResponse, clearMessage } )(Contact);

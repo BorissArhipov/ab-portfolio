@@ -1,4 +1,6 @@
-const initialState = {
+import { portfolioReducerProps } from '../types/types';
+
+const initialState: portfolioReducerProps = {
     col: 'all',
     all: 'portfolio--btn portfolio--btn-active',
     pet: 'portfolio--btn',

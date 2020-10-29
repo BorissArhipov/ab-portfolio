@@ -7,6 +7,7 @@ import Available from '../available/available';
 import Portfolio from '../portfolio/portfolio';
 import Contact from '../contact/contact';
 import Footer from '../footer/footer';
+import InfoBox from '../infoBox/infoBox'
 
 import './app.css';
 
@@ -36,6 +37,7 @@ class App extends Component {
                         contact: this.contact
                     }}
                 />
+                <InfoBox/>
                 <section className="home" ref={this.home}>
                     <div className="home--wrapper">
                         <div className="container">
