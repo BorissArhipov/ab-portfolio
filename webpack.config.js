@@ -1,9 +1,11 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = (env = {}) => {
 
     return {
-        mode: 'development',
+        mode: 'production',
         entry: './src/',
         resolve: {
             extensions: [".ts", ".tsx", ".js", ".jsx"]
@@ -103,6 +105,11 @@ module.exports = (env = {}) => {
                     },
                 },
             },
+            minimize: true,
+            minimizer: [
+                new CssMinimizerPlugin(),
+                new UglifyJsPlugin()
+            ],
         },
 
         devServer: {

@@ -12,6 +12,22 @@ interface AboutProps {
 
 class About extends Component<AboutProps> {
 
+    handleDownload() {
+        fetch("https://borissarhipov.me/cv", {
+            method: 'GET'
+        })
+        .then(response => response.blob())
+        .then(blob => {
+            let url = window.URL.createObjectURL(blob);
+            let a = document.createElement('a');
+            a.href = url;
+            a.download = "CV.pdf";
+            document.body.appendChild(a);
+            a.click();    
+            a.remove();   
+        });
+    }
+    
     render() {
         return (
             <div className="about--wrap">
@@ -19,13 +35,13 @@ class About extends Component<AboutProps> {
                     <div className="about--imagewrap">
                         <div className="about--img"></div>
                         <div className="about--iconwrap">
-                            <LinkOrScroll href="#" classN="about--icon">
+                            <LinkOrScroll href="https://www.linkedin.com/in/boriss-arhipov/" classN="about--icon">
                                 <i className="fab fa-linkedin-in"></i>
                             </LinkOrScroll>
-                            <LinkOrScroll href="#" classN="about--icon">
+                            <LinkOrScroll href="https://github.com/BorissArhipov" classN="about--icon">
                                 <i className="fab fa-github"></i>
                             </LinkOrScroll>
-                            <LinkOrScroll href="#" classN="about--icon">
+                            <LinkOrScroll href="https://vk.com/id206259387" classN="about--icon">
                                 <i className="fab fa-vk"></i>
                             </LinkOrScroll>
                         </div>
@@ -63,14 +79,17 @@ class About extends Component<AboutProps> {
                             </div> 
                         </div>
                         <div className="about--btnwrap">
-                        <LinkOrScroll classN="about--btn">
+                        <button 
+                            className="about--btn"
+                            onClick={() => this.handleDownload()}
+                        >
                             <div>
                                 <i className="fas fa-download"></i>
                                 <span>
                                     DOWNLOAD RESUME
                                 </span>
                             </div>
-                        </LinkOrScroll>
+                        </button>
                         <LinkOrScroll 
                             classN="about--btn2"
                             scrollTarget={this.props.refs.contact}
