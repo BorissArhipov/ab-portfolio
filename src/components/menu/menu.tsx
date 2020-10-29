@@ -31,15 +31,17 @@ interface MenuProps {
 class Menu extends Component<MenuProps> {
 
     componentDidMount() {
-        const {home, about, portfolio, contact} = this.props.refs;
-        window.addEventListener('scroll', () => {
-            this.props.handleScroll(window.pageYOffset, {
-                home: home.current.offsetTop,
-                about: about.current.offsetTop,
-                portfolio: portfolio.current.offsetTop,
-                contact: contact.current.offsetTop
-            })
-        });
+        if(window.innerWidth > 950) {
+            const {home, about, portfolio, contact} = this.props.refs;
+            window.addEventListener('scroll', () => {
+                this.props.handleScroll(window.pageYOffset, {
+                    home: home.current.offsetTop,
+                    about: about.current.offsetTop,
+                    portfolio: portfolio.current.offsetTop,
+                    contact: contact.current.offsetTop
+                })
+            });    
+        } 
     }
     
     componentWillUnmount() {

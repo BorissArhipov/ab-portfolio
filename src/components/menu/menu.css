@@ -68,7 +68,7 @@
     background-size: cover;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 950px) {
     .header {
         background-color: #18181b;
         padding: 20px 0;

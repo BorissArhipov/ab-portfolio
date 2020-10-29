@@ -69,8 +69,8 @@ class About extends Component<AboutProps> {
                             I develop a front-end for your projects
                         </h3>
                         <p className="about--text">
-                            Two and a half years ago I started my journey as a developer and now I am a Information Technology student in the correspondence course. 
-                            I’m soundly approaching a job search and therefore I will be glad to get a job as a front-end developer in your company as an intern. The main thing for me is the capability to grow as a specialist. I am ready to fully devote myself to work, while following the internal rules of the company.  
+                            Two and a half years ago I started my journey as a developer and now I am an Information Technology student in the correspondence course. 
+                            I’m soundly approaching a job search and therefore I will be glad to get a job as a front-end developer in your company as an trainee. The main thing for me is the capability to grow as a specialist. I am ready to fully devote myself to work, while following the internal rules of the company.  
                             As a former military man, I have the following qualities:  
                         </p>
                         <div className="about--tipswrap">

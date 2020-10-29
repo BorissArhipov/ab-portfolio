@@ -80,7 +80,8 @@ module.exports = (env = 'development') => {
         },
         plugins: [
             new HtmlWebpackPlugin({
-                template: 'public/index.html'
+                template: 'public/index.html',
+                favicon: './src/img/icon.png'
             }),
             new MiniCssExtractPlugin({
                 filename: 'main.css'
