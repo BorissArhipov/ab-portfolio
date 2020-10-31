@@ -95,7 +95,7 @@ class Contact extends Component<ContactProps> {
                     <textarea id="text" placeholder="Message..." className="contact--textarea"></textarea>
                     <div className="contact--border3 contact--border"></div>  
                     <button className="contact--btn" type="submit">
-                        SEND MESSAGE
+                        SEND A MESSAGE
                     </button>
                 </form>    
             </div>

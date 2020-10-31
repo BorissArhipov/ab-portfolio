@@ -193,4 +193,8 @@
     .contact--infotext {
         font-size: 16px;
     }
+
+    .contact--btn {
+        padding: 12px 80px;
+    }
 }

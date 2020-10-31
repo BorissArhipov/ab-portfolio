@@ -109,7 +109,7 @@ const itemsFunc = () => {
             collection: 'pet',
             img: shop.default,
             text: `
-                The React shop project was made in order to pratice usage of the Apollo and GraphQL libraries. The database of this project is MongoDB.
+                The React shop project was made in order to practice usage of the Apollo and GraphQL libraries. The database of this project is MongoDB.
             `,
             respon: [
                 'Building up a React project', 
@@ -146,7 +146,7 @@ const itemsFunc = () => {
             collection: 'pet',
             img: test.default,
             text: `
-                This project was made in order to practice wrinting unit tests for React app.
+                This project was made in order to practice writing unit tests for React app.
             `,
             respon: [
                 'Writing unit tests for React Components', 
